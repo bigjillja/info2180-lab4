@@ -1,0 +1,61 @@
+*{
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+header{
+    grid-area: 1;
+    background-color: rgb(57, 151, 232);
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+body{
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto;
+    background-color:aliceblue;
+}
+
+.superhero-search{
+    grid-area: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.search-box{
+    display: inline;
+}  
+
+input{
+   padding: 5px;
+   padding-left: 100px;
+   padding-right: 100px;
+   border-radius: 5px;
+}
+
+button{
+    background-color: red;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    padding-right: 10px;
+    margin: 5px;
+    padding-left: 10px;
+}
+
+.display-results{
+    grid-area: 3;
+    padding: 20px;
+}
+
+.display-results p{
+    width: 980px;
+}
+
+footer{
+    grid-area: 4;
+    margin: 4px;
+}

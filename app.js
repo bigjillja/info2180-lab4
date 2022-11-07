@@ -1,21 +1,28 @@
-window.addEventListener('load', function() {
-    let loadBtn = document.querySelector('#btn');
+window.onload = function(){
+    
+    var searchBtn = document.querySelector("button");
+    var results = document.querySelector(".results");
+    var query = document.querySelector("input");
+    searchBtn.addEventListener('click', element);
+    var request = new XMLHttpRequest();
+    
+    function element(e){
+        e.preventDefault();
+        var url = "superheroes.php?query=" + query.value;
+        request.onreadystatechange = fetch;
+        request.open('GET', url, true);
+        request.send();
+    }
 
-    loadBtn.addEventListener('click', function(element) {
-        element.preventDefault();
-
-        fetch("http://localhost/info2180-lab4/superheroes.php")
-            .then(response => {
-                if (response.ok) {
-                    return response.text()
-                } else {
-                    return Promise.reject('something went wrong!')
-                }
-            })
-            .then(data => {
-                let result = document.querySelector('#results');
-                alert(data)
-            })
-            .catch(error => console.log('There was an error: ' + error));
-    });
-});
+    function fetch(){
+        if (request.readyState === XMLHttpRequest.DONE){
+            if (request.status === 200){
+                var response = request.responseText;
+                results.innerHTML = response;
+            }
+            else{
+                results.innerHTML = "Error: This request can not be delivered. Please try again.";
+            }
+        }
+    }
+}

@@ -5,8 +5,26 @@
     <script src = "app.js"></script>
 </head>
 <body>
-    <h1>Avengers Character Search</h1>
-    <button id = "btn">Search</button>
-    <div id = "results">
-    </div>
+    <header>
+        <h1>AVENGERS CHARACTER SEARCH</h1>
+    </header>
+    <section class="superhero-search">
+        <div class="container">
+            <p>Search by Full Name or Alias.</p>
+            <form action="#" method="post">
+                <div class="search-box">
+                    <input type="text" name="query" id="query" placeholder="e.g. Captain America or Steve Rodgers">
+                </div>
+                <button type="submit" class="btn">Search</button>
+            </form>
+        </div>
+    </section>
+    <section class="display-results">
+        <h2>RESULT</h2>
+        <hr>
+        <div class="results" id="results"></div>
+    </section>
+    <footer>
+        <h3> Copyright &copy 2020, Martin Bartley</h3>
+    </footer>
 </body>
